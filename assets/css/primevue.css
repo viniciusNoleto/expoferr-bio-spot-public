@@ -1,0 +1,54 @@
+
+@layer primevue-styled {
+
+  .p-tooltip-text {
+    @apply tracking-wider font-medium bg-zinc-50 text-default-light dark:text-default-dark px-2 py-1 text-sm shadow-md;
+  }
+
+  .p-tooltip-arrow {
+    @apply shadow-md;
+  }
+
+  .p-tooltip.p-tooltip-left .p-tooltip-arrow {
+    @apply border-l-zinc-50;
+  }
+
+  .p-tooltip.p-tooltip-right .p-tooltip-arrow {
+    @apply border-r-zinc-50;
+  }
+
+  .p-tooltip.p-tooltip-top .p-tooltip-arrow {
+    @apply border-t-zinc-50;
+  }
+
+  .p-tooltip.p-tooltip-bottom .p-tooltip-arrow {
+    @apply border-b-zinc-50;
+  }
+
+  .p-togglebutton {
+    @apply text-base;
+  }
+
+  .p-inputicon {
+    @apply translate-x-1/2 -translate-y-1/2 start-0 m-0 w-fit h-fit;
+  }
+  
+  .p-select-option,
+  .p-multiselect-option {
+    @apply duration-300;
+  }
+
+  .p-select-option-selected,
+  .p-multiselect-option-selected {
+    @apply text-default-dark;
+  }
+
+  .p-chip-remove-icon {
+    @apply hover:text-red-500 transition-colors duration-300;
+  }
+
+  :root {
+    --p-form-field-invalid-placeholder-color: var(--p-form-field-placeholder-color);
+  }
+
+}
