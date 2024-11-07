@@ -1,0 +1,35 @@
+services:
+  bio-spot-web-public-app:
+    container_name: bio-spot-web-public-app
+    user: node
+    restart: unless-stopped
+    tty: true
+    build:
+      dockerfile: ./.config/docker/node/Dockerfile.deploy
+    volumes:
+      - ./:/app/
+    networks:
+      - bio-spot-web-public-network
+  bio-spot-web-public-server:
+    container_name: bio-spot-web-public-server
+    restart: unless-stopped
+    tty: true
+    build:
+      dockerfile: ./.config/docker/nginx/Dockerfile.deploy
+    ports:
+      - ${APP_HTTP_PORT-80}:80
+      - ${APP_HTTPS_PORT-80}:443
+    volumes:
+      - ./.config/docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./.config/docker/nginx/conf/route.conf:/etc/nginx/conf.d/route.conf
+      - ./.config/docker/nginx/letsencrypt/:/data/letsencrypt/
+      - ./nginx-502-page.html:/nginx-502-page.html
+      - /etc/letsencrypt/:/etc/letsencrypt/
+    networks:
+      - bio-spot-web-public-network
+    depends_on:
+      - bio-spot-web-public-app
+networks:
+  bio-spot-web-public-network:
+    name: bio-spot-web-public-network
+    driver: bridge
