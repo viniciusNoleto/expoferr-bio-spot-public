@@ -132,7 +132,7 @@
   import { useConfirmComplaintFormRequestHandler } from '~/app/complaint/handlers/confirmComplaintFormRequestHandler';
   import { useDiscardComplaintFormRequestHandler } from '~/app/complaint/handlers/discardComplaintFormRequestHandler';
 
-  definePage({
+  await definePage({
     title: 'Denúncia',
   });
 

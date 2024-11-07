@@ -1,5 +1,15 @@
 <template>
-  <SvgError class="max-h-[80vh]" />
+  <div class="h-screen w-screen center-flex flex-col bg-gradient-to-br from-primary-300 to-primary-700 gap-6">
+    <span class="text-4xl text-white">
+      Página com problemas :(
+    </span>
+
+    <ExpoButton
+      to="/"
+      label="Voltar para a página inicial"
+      color="white-primary"
+    />
+  </div>
 </template>
 
 <script lang="ts" setup>

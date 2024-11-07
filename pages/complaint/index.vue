@@ -58,7 +58,7 @@
   import { useGetComplaintsPaginatedRequestHandler } from '~/app/complaint/handlers/getComplaintsPaginatedRequestHandler';
   import { GLOBAL_ICONS } from '~/shared/packages/constants/icons';
 
-  definePage({
+  await definePage({
     title: 'Denúncias',
   });
 

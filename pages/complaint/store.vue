@@ -55,7 +55,7 @@
   import L from 'leaflet';
   import { useStoreComplaintFormRequestHandler } from '~/app/complaint/handlers/storeComplaintFormRequestHandler';
 
-  definePage({
+  await definePage({
     title: 'Nova denúncia',
   });
 

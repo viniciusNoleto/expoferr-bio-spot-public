@@ -1,8 +1,10 @@
 <template>
-  <section class="w-screen h-screen overflow-hidden relative">
+  <section class="min-w-screen min-h-screen flex flex-col">
     <NuxtLoadingIndicator :color="PRIMARY_COLOR" />
 
-    <NuxtPage :page-key="route => [route.path, route.query?.fr ?? 0].join('#')" />
+    <NuxtLayout class="grow">
+      <NuxtPage :page-key="route => [route.path, route.query?.fr ?? 0].join('#')" />
+    </NuxtLayout>
   </section>
 </template>
 

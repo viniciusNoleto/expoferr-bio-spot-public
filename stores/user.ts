@@ -1,10 +1,13 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
+import type { IAuth } from '~/app/auth/models/Auth';
 
 export const useUserStore = defineStore('User', () => {
 
-  const user = ref();
+  type User = Omit<IAuth, 'access_token'>;
 
-  function setUser(_user: any) {
+  const user = ref<User>();
+
+  function setUser(_user: User) {
     user.value = _user;
   };
 
@@ -21,12 +24,15 @@ export const useUserStore = defineStore('User', () => {
     navigateTo('/auth/login');
   }
 
+  const isLogged = computed(() => !!user.value && !!token.value);
+
   return {
     user,
     setUser,
     token,
     setToken,
-    logout
+    logout,
+    isLogged
   }
 
 });

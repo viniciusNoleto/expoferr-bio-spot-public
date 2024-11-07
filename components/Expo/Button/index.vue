@@ -175,16 +175,12 @@
     switch (!props.disabled ? props.color : props.disabledColor) {
       case 'hover-primary':
         return 'focus:text-primary-600 hover:text-primary-500';
-      case 'hover-complementary':
-        return 'focus:text-complementary-600 hover:text-complementary-500';
       case 'hover-red':
         return 'focus:text-red-600 hover:text-red-500';
       case 'hover-gray':
         return 'focus:text-gray-600 hover:text-gray-500';
       case 'text-primary':
         return 'focus:text-primary-700 hover:text-primary-600 text-primary-500';
-      case 'text-complementary':
-        return 'focus:text-complementary-700 hover:text-complementary-600 text-complementary-500';
       case 'text-red':
         return 'focus:text-red-700 hover:text-red-600 text-red-500';
       case 'outline-primary':
@@ -193,24 +189,6 @@
           !props.noHover ? [
             hoverBase,
             'hover:ring-primary-500/30'
-          ] : '',
-          props.rounded,
-        ];
-      case 'outline-primary-dark':
-        return [
-          'focus:text-primary-700 hover:text-primary-600 text-subtitle border border-border hover:border-primary-500',
-          !props.noHover ? [
-            hoverBase,
-            'hover:ring-primary-500/30'
-          ] : '',
-          props.rounded,
-        ];
-      case 'outline-complementary':
-        return [
-          'focus:text-complementary-700 hover:text-complementary-600 text-complementary-500 border border-complementary-500',
-          !props.noHover ? [
-            hoverBase,
-            'hover:ring-complementary-500/30'
           ] : '',
           props.rounded,
         ];
@@ -232,15 +210,6 @@
           ] : '',
           props.rounded,
         ];
-      case 'transparent-complementary':
-        return [
-          'bg-complementary-500/10 text-complementary-500 hover:text-complementary-600 focus:text-complementary-700',
-          !props.noHover ? [
-            hoverBase,
-            'hover:ring-complementary-500/30'
-          ] : '',
-          props.rounded,
-        ];
       case 'transparent-red':
         return [
           'bg-red-500/10 text-red-500 hover:text-red-600 focus:text-red-700',
@@ -256,6 +225,15 @@
           !props.noHover ? [
             hoverBase,
             'hover:ring-gray-500/30'
+          ] : '',
+          props.rounded,
+        ];
+      case 'white-primary':
+        return [
+          'bg-white border-primary-600 text-primary-500',
+          !props.noHover ? [
+            hoverBase,
+            'hover:ring-primary-100/30'
           ] : '',
           props.rounded,
         ];
@@ -286,26 +264,6 @@
           !props.noHover ? [
             hoverBase,
             'hover:ring-green-600/30'
-          ] : '',
-          props.rounded,
-        ];
-      case 'complementary':
-        return [
-          'bg-complementary-500 text-white',
-          !props.noBorder ? 'border border-complementary-600' : '',
-          !props.noHover ? [
-            hoverBase,
-            'hover:ring-complementary-500/30'
-          ] : '',
-          props.rounded,
-        ];
-      case 'primary-light':
-        return [
-          'bg-primary-200 text-white',
-          !props.noBorder ? 'border border-primary-300' : '',
-          !props.noHover ? [
-            hoverBase,
-            'hover:ring-primary-200/30'
           ] : '',
           props.rounded,
         ];

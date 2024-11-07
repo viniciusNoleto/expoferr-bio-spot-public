@@ -11,7 +11,8 @@ export const useLoginService = defineService(() => {
       userStore.setToken(response.data.access_token);
       userStore.setUser({
         name: response.data.name,
-        email: response.data.abilities
+        abilities: response.data.abilities,
+        role_slug: response.data.role_slug
       });
 
       navigateTo('/');

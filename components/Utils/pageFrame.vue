@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col gap-8">
+  <section class="flex flex-col gap-8 w-[80%] mx-auto pt-4 pb-10">
     <div class="flex flex-col gap-1">
       <h2 class="text-3xl font-bold text-primary-900 dark:text-primary-50">
         {{ title || breadcrumbs[breadcrumbs.length - 1]?.name }}
